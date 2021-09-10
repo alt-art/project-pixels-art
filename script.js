@@ -2,7 +2,7 @@ function generateColor() {
   const rexC = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
   let result = '#';
   for (let i = 0; i < 6; i += 1) {
-    result += rexC[Math.round(Math.random() * rexC.length)];
+    result += rexC[Math.round(Math.random() * (rexC.length - 1))];
   }
   return result;
 }
@@ -46,7 +46,7 @@ function createTable(num) {
   } else if (size > 50) {
     size = 50;
   }
-  pixelTable.style.gridTemplateColumns = `repeat(${size}, 40px)`;
+  pixelTable.style.gridTemplateColumns = `repeat(${size}, 48px)`;
   pixelTable.innerHTML = '';
   for (let j = 0; j < size * size; j += 1) {
     const pixel = document.createElement('div');
