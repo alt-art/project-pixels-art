@@ -41,4 +41,15 @@ function createTable(width, height) {
   }
 }
 
+function clearTable() {
+  const pixels = document.querySelectorAll('.pixel');
+  pixels.forEach((elem) => {
+    const pixel = elem;
+    pixel.style.backgroundColor = 'rgb(255, 255, 255)';
+  });
+}
+
+const clearButton = document.querySelector('#clear-board');
+clearButton.addEventListener('click', clearTable);
+
 createTable(5, 5);
