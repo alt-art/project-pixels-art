@@ -25,19 +25,24 @@ selected = black;
 
 const pixelTable = document.querySelector('#pixel-board');
 
-function createTable(width, height) {
-  pixelTable.style.gridTemplateColumns = `repeat(${width}, 40px)`;
-  for (let j = 0; j < width; j += 1) {
-    for (let i = 0; i < height; i += 1) {
-      const pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      pixel.style.backgroundColor = 'rgb(255, 255, 255)';
-      pixel.addEventListener('click', () => {
-        const select = document.querySelector('.selected');
-        pixel.style.backgroundColor = select.style.backgroundColor;
-      });
-      pixelTable.appendChild(pixel);
-    }
+function createTable(num) {
+  let size = num;
+  if (size < 5) {
+    size = 5;
+  } else if (size > 50) {
+    size = 50;
+  }
+  pixelTable.style.gridTemplateColumns = `repeat(${size}, 40px)`;
+  pixelTable.innerHTML = '';
+  for (let j = 0; j < size * size; j += 1) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixel.style.backgroundColor = 'rgb(255, 255, 255)';
+    pixel.addEventListener('click', () => {
+      const select = document.querySelector('.selected');
+      pixel.style.backgroundColor = select.style.backgroundColor;
+    });
+    pixelTable.appendChild(pixel);
   }
 }
 
@@ -52,4 +57,14 @@ function clearTable() {
 const clearButton = document.querySelector('#clear-board');
 clearButton.addEventListener('click', clearTable);
 
-createTable(5, 5);
+const tableSize = document.querySelector('#board-size');
+const generateButton = document.querySelector('#generate-board');
+generateButton.addEventListener('click', () => {
+  const size = parseInt(tableSize.value, 10);
+  if (!Number.isNaN(size)) {
+    createTable(size);
+  } else {
+    alert('Board inválido!');
+  }
+});
+createTable(5);
