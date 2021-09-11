@@ -1,5 +1,9 @@
 function generateColor() {
-  return `#${Math.floor((Math.random() * 16777215) + 1).toString(16)}`;
+  return `rgb(${randomRange(1, 255)}, ${randomRange(1, 255)}, ${randomRange(1, 255)}`;
+}
+
+function randomRange(min, max) {
+  return Math.floor(Math.random() * (max - (min - 1))) + min;
 }
 
 const defaultColorPallet = ['black'];
