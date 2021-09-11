@@ -1,7 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap') ;
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #1a1b1b;
+  color: rgb(250, 98, 138);
+}
+
+main {
+  text-align: center;
+  margin: 1rem;
+}
+
+.selected {
+  border: rgb(250, 98, 138) solid;
+}
+
+input {
+  width: 80px;
+}
+
+input , button {
+  background: none;
+  border: 2px rgb(250, 98, 138) solid;
+  border-radius: 5px;
+  font-weight: 900;
+  color: #cecece;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 #color-palette div {
+  margin: 5px;
   width: 50px;
   height: 100%;
-  border: 1px solid;
+  border: 1px black solid;
+  border-radius: 10px;
 }
 
 #color-palette {
@@ -11,9 +47,12 @@
 }
 
 .pixel {
+  transition: background-color 500ms;
+  margin: 3px;
   width: 40px;
   height: 40px;
-  border: 1px solid;
+  border: 1px black solid;
+  border-radius: 5px;
 }
 
 #pixel-board {
