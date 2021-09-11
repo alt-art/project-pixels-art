@@ -1,5 +1,5 @@
 function generateColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor((Math.random() * 16777215) + 1).toString(16)}`;
 }
 
 const defaultColorPallet = ['black'];
