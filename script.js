@@ -39,12 +39,7 @@ selected = black;
 const pixelTable = document.querySelector('#pixel-board');
 
 function createTable(num) {
-  let size = num;
-  if (size < 5) {
-    size = 5;
-  } else if (size > 50) {
-    size = 50;
-  }
+  let size = num < 5 ? 5 : num > 50 ? 50 : num;
   pixelTable.style.gridTemplateColumns = `repeat(${size}, 48px)`;
   pixelTable.innerHTML = '';
   for (let j = 0; j < size * size; j += 1) {
