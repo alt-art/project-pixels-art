@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap') ;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500&display=swap');
 
 body {
   font-family: Roboto, sans-serif;
   background-color: #1a1b1b;
   color: rgb(250, 98, 138);
+}
+
+h1 {
+  font-weight: 300;
 }
 
 main {
@@ -23,7 +27,7 @@ input , button {
   background: none;
   border: 2px rgb(250, 98, 138) solid;
   border-radius: 5px;
-  font-weight: 900;
+  font-weight: 500;
   color: #cecece;
 }
 
@@ -36,7 +40,7 @@ input , button {
   margin: 5px;
   width: 50px;
   height: 100%;
-  border: 1px black solid;
+  border: 2px rgb(250, 98, 138) solid;
   border-radius: 10px;
 }
 

@@ -3,7 +3,13 @@ function randomRange(min, max) {
 }
 
 function generateColor() {
-  return `rgb(${randomRange(1, 255)}, ${randomRange(1, 255)}, ${randomRange(1, 255)}`;
+  return `rgb(${
+    randomRange(1, 255)
+  }, ${
+    randomRange(1, 255)
+  }, ${
+    randomRange(1, 255)
+  }`;
 }
 
 const defaultColorPallet = ['black'];
